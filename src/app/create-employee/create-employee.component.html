@@ -1,0 +1,30 @@
+<h1>Create Employee</h1>
+<form [formGroup]="signupEmployeeForm" (ngSubmit)=" createEmployee(signupEmployeeForm.value)">
+  First Name: <input type="text" placeholder="Enter first name" formControlName = "firstName">
+  <span *ngIf="firstNameValidator && firstNameValidator.invalid && firstNameValidator.touched">
+    Please enter valid first name</span>
+  <br><br>
+  Last Name: <input type="text" placeholder="Enter last name" formControlName = "lastName">
+  <span *ngIf="lastNameValidator && lastNameValidator.invalid && lastNameValidator.touched">
+    password is weak</span>
+  <br><br>
+  Mobile No: <input type="text" placeholder="Enter phone no." formControlName = "mobileNo">
+  <span *ngIf="mobileNoValidator && mobileNoValidator.invalid && mobileNoValidator.touched">
+    password is weak</span>
+  <br><br>
+  E-Mail: <input type="email" placeholder="Enter email address" formControlName = "email">
+  <span *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
+    password is weak</span>
+  <br><br>
+  E-Mail: <input type="text" placeholder="Enter salary" formControlName = "salary">
+  <span *ngIf="salaryValidator && salaryValidator.invalid && salaryValidator.touched">
+    password is weak</span>
+  <br><br>
+  User Id: <input type="text" placeholder="Enter User Id" formControlName = "userId">
+  <span *ngIf="userIdValidator && userIdValidator.invalid && userIdValidator.touched">
+    password is weak</span>
+  <br><br>
+  <button [disabled]="signupEmployeeForm.invalid">Create User</button> 
+</form>
+
+<!-- add lables to each field -->

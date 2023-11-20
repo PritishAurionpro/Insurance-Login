@@ -1,0 +1,12 @@
+<h1>Create Admin</h1>
+<form [formGroup]="signupAdminForm" (ngSubmit)="createAdmin(signupAdminForm.value)">
+  First Name: <input type="text" placeholder="Enter first name" formControlName = "firstName">
+  <span *ngIf="firstNameValidator && firstNameValidator.invalid && firstNameValidator.touched">
+    Please enter valid first name</span>
+  <br><br>
+  Last Name: <input type="text" placeholder="Enter last name" formControlName = "lastName">
+  <span *ngIf="lastNameValidator && lastNameValidator.invalid && lastNameValidator.touched">
+    Please enter valid last name</span>
+  <br><br>
+  <button [disabled]="signupAdminForm.invalid">Create Admin Account</button>
+</form>

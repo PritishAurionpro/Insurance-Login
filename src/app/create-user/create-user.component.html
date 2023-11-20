@@ -1,0 +1,22 @@
+<h1>Create User</h1>
+<form [formGroup]="signupUserForm" (ngSubmit)=" createUser(signupUserForm.value)">
+  User Name: <input type="text" placeholder="Enter user name" formControlName = "userName">
+  <span *ngIf="userNameValidator && userNameValidator.invalid && userNameValidator.touched">
+    Please enter valid user name</span>
+  <br><br>
+  Password: <input type="password" placeholder="Enter a password" formControlName = "password">
+  <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+    password is weak</span>
+  <br><br>
+  RoleId: <input type="number" placeholder="Enter a RoleId" formControlName = "roleId">
+  <span *ngIf="roleIdValidator && roleIdValidator.invalid && roleIdValidator.touched">
+    password is weak</span>
+  <br><br>
+  <button [disabled]="signupUserForm.invalid">Create User</button> 
+</form>
+
+  
+<!-- can use disabled function of other form to make sure both are submitted 
+not working cuz role id bhejna hai-->
+
+
